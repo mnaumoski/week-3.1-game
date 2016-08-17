@@ -1,0 +1,26 @@
+#container {
+
+	width:80%;
+	border-radius: 10px;
+	padding: 15px;
+	background-color: #3159b8;
+	margin: 10% auto;
+	text-align: center;
+}
+
+#letters a {
+	color:#6b0020;
+	padding: 10px;
+	background-color: #ffdee7;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#letters a:hover {
+	color:#59b831;
+}
+
+#letters a.clicked {
+	color: #00206c;
+	text-decoration:none;
+}

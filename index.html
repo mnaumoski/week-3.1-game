@@ -8,117 +8,26 @@
 	<link type="text/css" rel="stylesheet" href="assets/css/style.css" >
 </head>
 <body>
+  <!-- USE CONTAINERS, ROWS, AND COLUMNS -->
+  <div id="container" class="container">
+    <div id="header" class="row">
+      <div class="col-xs-12">
+        <p>You have <span id="lives">8</span> turns left to play.
+        <br>
+        There are <span id="numLetters">6</span> letters in this word.</p>
+        <h1 id="word">________</h1>
+      </div>
+    </div>
+    <!-- CREATE ALPHABET LINKS DYNAMICALLY TO CLEAN UP YOUR MARKUP -->
+    <!--  MAKE THEM RESPONSIVE WITH BOOTSTRAP-->
+    <div id="letters" class="row"></div>
+  </div>
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<!-- <script type="text/javascript" src="assets/javascript/game.js"></script> -->
-
-
-
-<!-- the content of the page -->
-
-  	<div id="container">
-		<div id="header">
-			<p>You have <span id="lives">8</span> turns left to play.
-			<br>
-			There are <span id="numLetters">6</span> letters in this word.</p>
-			<h1 id="word">________</h1>
-		</div>
-
-		<div id="letters">
-			<a id="a">A</a>
-			<a id="b">B</a>
-			<a id="c">C</a>
-			<a id="d">D</a>
-			<a id="e">E</a>
-			<a id="f">F</a>
-			<a id="g">G</a>
-			<a id="h">H</a>
-			<a id="i">I</a>
-			<a id="j">J</a>
-			<a id="k">K</a>
-			<a id="l">L</a>
-			<a id="m">M</a>
-			<a id="n">N</a>
-			<a id="o">O</a>
-			<a id="p">P</a>
-			<a id="q">Q</a>
-			<a id="r">R</a>
-			<a id="s">S</a>
-			<a id="t">T</a>
-			<a id="u">U</a>
-			<a id="v">V</a>
-			<a id="w">W</a>
-			<a id="x">X</a>
-			<a id="y">Y</a>
-			<a id="z">Z</a>
-		</div>
-	</div>
- </div>
- <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/javascript/wordlist.js"></script>
-<script type="text/javascript" src="assets/javascript/click.js"></script>
-<script>
-var Game = new Object;
-Game.WordArray = [];
-Game.WordUArray = [];
-
-Game.Lives = 8;
-Game.NumInWordBank = Words.length;
-
-Game.Word = "test";
-Game.WordU = " ";
-
-Game.PullWord = function () {
-	Game.Word = Words.list[(Math.floor(Math.random()*Game.NumInWordBank))];
-}
-Game.SetUnderline = function () {
-	Game.PullWord();
-	for (i=0; i < Game.Word.length; i++){
-		Game.WordArray[i] = Game.Word.charAt(i);
-		Game.WordUArray[i] = "_";
-	}
-
-	Game.WordU = Game.WordUArray.join("");
-	document.getElementById("word").innerHTML = Game.WordU;
-	document.getElementById("numLetters").innerHTML = Game.Word.length;
-}
-
-Game.UpdateLetter = function(letter) {
-	Game.Changes = 0;
-	for(i=0; i < Game.Word.length; i++){
-	 Game.WordArray[i] = Game.Word.charAt(i);
-		
-	if(Game.Word.charAt(i) == letter) { 
-		Game.WordUArray[i] = letter;
-		Game.Changes += 1;
-		}
-	}
-		if(Game.Changes < 1) {
-			Game.Lives -= 1;
-			document.getElementById("lives").innerHTML = Game.Lives;
-		}
-
-		Game.WordU = Game.WordUArray.join("");
-		document.getElementById("word").innerHTML = Game.WordU;
-		
-		Game.Word1 = Game.WordArray.join("");
-		Game.Word2 = Game.WordUArray.join("");
-
-		if (Game.Word1 == Game.Word2) {
-			alert("Victory!");
-			window.location.reload();
-		}
-	
-	    if(Game.Lives < 1) {
-	    	document.getElementById("word").innerHTML == Game.Word1;
-	    	alert("No more turns! Please try again!");
-	    	window.location.reload();
-	    }
-	}
-Game.PullWord();
-Game.SetUnderline();
-
-</script>
-
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <!-- LOAD WORDLIST BEFORE GAME -->
+  <script type="text/javascript" src="assets/javascript/wordlist.js"></script>
+  <!-- LOAD GAME BEFORE CLICK -->
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+  <script type="text/javascript" src="assets/javascript/click.js"></script>
 </body>
 </html>

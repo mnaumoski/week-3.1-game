@@ -1,25 +1,27 @@
-var Words = {};
-Words.list = [];
-Words.list[0] = "crow";
-Words.list[1] = "khaleesi";
-Words.list[2] = "maester";
-Words.list[3] = "nightshade";
-Words.list[4] = "smallfolk"
-Words.list[5] = "unsullied";
-Words.list[6] = "valyrian";
-Words.list[7] = "targaryen";
-Words.list[8] = "stark";
-Words.list[9] = "baratheon";
-Words.list[10] = "warg";
-Words.list[11] = "westeros";
-Words.list[12] = "wildfire";
-Words.list[13] = "wildling";
-Words.list[14] = "lannister";
-Words.list[15] = "dothraki";
-Words.list[16] = "braavosi";
-Words.list[17] = "raven";
-Words.list[18] = "brothel";
-Words.list[19] = "seven";
-Words.list[20] = "climb";
+// CONSIDER REFACTORING WORDS INTO THIS
 
-Words.length = Words.list.length;
+var Words = {
+  list: [
+    "crow",
+    "khaleesi",
+    "maester",
+    "nightshade",
+    "smallfolk",
+    "unsullied",
+    "valyrian",
+    "targaryen",
+    "stark",
+    "baratheon",
+    "warg",
+    "westeros",
+    "wildfire",
+    "wildling",
+    "lannister",
+    "dothraki",
+    "braavosi",
+    "raven",
+    "brothel",
+    "seven",
+    "climb"
+  ],
+};
